@@ -25,7 +25,7 @@
   export let isEdited = false;
   export let passwordAutocomplete: string = 'current-password';
 
-  const handleInput = (e: Event) => {
+  const handleBlur = (e: Event) => {
     value = (e.target as HTMLInputElement).value;
 
     if (inputType === SettingInputFieldType.NUMBER) {
@@ -79,7 +79,7 @@
       {step}
       {required}
       {value}
-      on:input={handleInput}
+      on:blur={handleBlur}
       {disabled}
       {title}
     />
